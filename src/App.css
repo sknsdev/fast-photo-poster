@@ -1,0 +1,86 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  font-style: italic;
+}
+
+/* Общий стиль для инпута */
+.user__input {
+  width: 100%;
+  padding: 16px;
+  font-size: 28px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+/* Стиль для фокуса инпута в светлой теме */
+.user__input:focus {
+  outline: none;
+  border-color: #ff6600;
+  box-shadow: 0 0 5px #ff6600;
+}
+
+/* Стиль для темной темы браузера */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  /* Стиль для инпута в темной теме */
+  .user__input {
+    background-color: #303030;
+    border-color: #00bfff;
+  }
+
+  .user__input:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 5px #ff6600;
+  }
+}
+
+
+.user__info {
+  color: #383838;
+  padding: 12px;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.user__info.large {
+  padding: 18px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .user__info {
+    color: #c4c4c4;
+  }
+}
+
+.shortcut {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  min-width: 16px;
+}
+
+/* Стиль для фона span с классом shortcut */
+.shortcut:hover {
+  background-color: #f2f2f2;
+}
