@@ -23,15 +23,17 @@ function App() {
             formData.append('correct_value', data?.value?.replace(/[,;\s]/g, '.'));
             formData.append('image', blob, `photo_${currentImageID}.jpg`);
 
-            const kyResponse = await ky.post(server_url, {
+            await ky.post(server_url, {
                 body: formData,
+            }).then((res) => {
+                setCurrentImageID((prev) => Number(prev) + 1);
+                reset();
+                setFocus('value');
+            }, (err) => {
+                console.log(err);
             });
 
-            console.log('success', kyResponse);
 
-            setCurrentImageID((prev) => Number(prev) + 1);
-            reset();
-            setFocus('value');
         } catch (error) {
             console.error('Error:', error);
         }
